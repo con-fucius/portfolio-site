@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Optional: Add any global base styles here if needed, 
+   but prefer Tailwind classes where possible */
+
+body {
+  @apply bg-light-DEFAULT text-light-text; /* Default is light theme */
+}
+
+.dark body {
+  @apply bg-dark-DEFAULT text-dark-text; /* Styles for dark theme */
+}
+
+/* Styling for scrollbar (optional, but can enhance theme consistency) */
+/* For Webkit browsers */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-light-DEFAULT dark:bg-dark-DEFAULT;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 dark:bg-gray-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500 dark:bg-gray-500;
+}
+
+/* General selection color - can be themed if desired */
+::selection {
+  @apply bg-brand-accent text-brand-primary;
+}
+
+/* Custom icon sizing classes */
+.icon-size-4 {
+  width: 1rem;  /* 16px */
+  height: 1rem; /* 16px */
+}
+
+.icon-size-5 {
+  width: 1.25rem; /* 20px */
+  height: 1.25rem; /* 20px */
+}
+
+.icon-size-6 {
+  width: 1.5rem; /* 24px */
+  height: 1.5rem; /* 24px */
+}
+
+.icon-size-10 {
+  width: 2.5rem; /* 40px */
+  height: 2.5rem; /* 40px */
+}
+
+/* Direct styles for Hero section text */
+.hero-title {
+  font-size: 2.25rem; /* Equivalent to text-3xl */
+  line-height: 2.5rem; /* Equivalent to text-3xl */
+  font-weight: 400; /* normal */
+}
+.hero-quote {
+  font-size: 1.25rem; /* Equivalent to text-xl */
+  line-height: 1.75rem; /* Equivalent to text-xl */
+  font-weight: 400; /* normal */
+  font-style: italic;
+}
+
+/* Responsive adjustments if needed */
+@media (min-width: 640px) { /* sm breakpoint */
+  .hero-title {
+    font-size: 2.75rem; /* Approx text-4xl */
+    line-height: 1;
+  }
+  .hero-quote {
+    font-size: 1.5rem; /* Equivalent to text-2xl */
+    line-height: 2rem; /* Equivalent to text-2xl */
+  }
+}
+@media (min-width: 768px) { /* md breakpoint */
+  .hero-title {
+    font-size: 3.25rem; /* Approx text-5xl */
+    line-height: 1;
+  }
+  .hero-quote {
+    font-size: 1.875rem; /* Equivalent to text-3xl */
+    line-height: 2.25rem; /* Equivalent to text-3xl */
+  }
+}
+
+/* Direct styles for Skills grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr)); /* Default: 1 column */
+}
+
+@media (min-width: 768px) { /* md breakpoint */
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 columns on md+ */
+  }
+}
+
+/* Direct styles for Navbar link spacing */
+.desktop-nav-links > * + * { /* Apply margin to all direct children except the first */
+  margin-left: 1rem; /* Equivalent to space-x-4 */
+}
