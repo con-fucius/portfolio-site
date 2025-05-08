@@ -1,6 +1,7 @@
 export default {
   plugins: {
-    '@tailwindcss/postcss': {}, // Using the specific package as a key, required by Vercel build
+    // Explicitly point to the config file
+    '@tailwindcss/postcss': { config: './tailwind.config.ts' },
     autoprefixer: {},
   },
 };

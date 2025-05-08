@@ -4,7 +4,7 @@ import matter from 'gray-matter';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import Link from 'next/link';
-import type { Metadata, ResolvingMetadata } from 'next';
+import type { Metadata } from 'next'; // Removed unused ResolvingMetadata
 
 interface PostFrontmatter {
   title?: string;
