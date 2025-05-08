@@ -17,7 +17,7 @@ const contactLinks = [
   },
   {
     name: "Discord",
-    label: "@zero_figures.",
+    label: "@zero_figures.", // No single quote here
     // Discord links are tricky; usually it's an invite or a profile ID not directly linkable to open app
     // For now, a placeholder or a link to a server if available.
     href: "#", // Placeholder as direct profile links are not standard
@@ -25,13 +25,13 @@ const contactLinks = [
   },
   {
     name: "GitHub",
-    label: "github.com/con-fucius",
+    label: "github.com/con-fucius", // No single quote here
     href: "https://github.com/con-fucius",
     icon: null, // Icon removed
   },
   {
     name: "X (Twitter)",
-    label: "x.com/genghis_khxnt",
+    label: "x.com/genghis_khxnt", // No single quote here
     href: "https://x.com/genghis_khxnt",
     icon: null, // Icon removed
   },

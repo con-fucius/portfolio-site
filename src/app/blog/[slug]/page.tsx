@@ -6,6 +6,12 @@ import remarkGfm from 'remark-gfm';
 import Link from 'next/link';
 import type { Metadata, ResolvingMetadata } from 'next';
 
+interface PostFrontmatter {
+  title?: string;
+  date?: string | Date;
+  excerpt?: string;
+  // Add other potential frontmatter fields here if known
+}
 interface PostPageProps {
   params: {
     slug: string;
@@ -25,7 +31,7 @@ const formatDate = (date: Date | string): string => {
 };
 
 // Function to get a single post's content and metadata
-async function getPostData(slug: string): Promise<{ frontmatter: any; content: string; filename: string } | null> {
+async function getPostData(slug: string): Promise<{ frontmatter: PostFrontmatter; content: string; filename: string } | null> { // Use PostFrontmatter interface
   const filenames = fs.readdirSync(blogDir);
   const targetFilename = filenames.find(fname => generateSlug(fname) === slug);
 
@@ -55,7 +61,7 @@ export async function generateStaticParams() {
 // Generate metadata for the page
 export async function generateMetadata(
   { params }: PostPageProps,
-  parent: ResolvingMetadata
+  // parent: ResolvingMetadata // Removed unused parameter
 ): Promise<Metadata> {
   const post = await getPostData(params.slug);
   if (!post) {
@@ -80,7 +86,7 @@ export default async function BlogPostPage({ params }: PostPageProps) {
     return (
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center">
         <h1 className="text-3xl font-bold text-brand-accent mb-4">Post Not Found</h1>
-        <p className="text-gray-600 dark:text-gray-400 mb-8">Sorry, we couldn't find the post you were looking for.</p>
+        <p className="text-gray-600 dark:text-gray-400 mb-8">Sorry, we could not find the post you were looking for.</p> {/* Replaced couldn't */}
         <Link href="/blog" className="text-brand-accent hover:underline">
           &larr; Back to Blog
         </Link>
