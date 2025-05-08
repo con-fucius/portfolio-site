@@ -35,14 +35,16 @@ const projectsData = [
 // Icon components removed due to persistent sizing issues
 const Projects = () => {
   return (
-    <section id="projects" className="py-16 md:py-24 bg-light-DEFAULT dark:bg-dark-DEFAULT">
+    <section id="projects" className="py-16 md:py-24" style={{ backgroundColor: 'var(--color-bg-light)' }}>
+      {/* TODO: Apply dark mode background via CSS variable or different approach if needed */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-light-text dark:text-dark-text">
           Featured <span className="text-brand-accent">Projects</span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projectsData.map((project, index) => (
-            <div key={index} className="bg-light-DEFAULT dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col overflow-hidden border border-gray-200 dark:border-gray-700">
+            <div key={index} className="dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col overflow-hidden border border-gray-200 dark:border-gray-700" style={{ backgroundColor: 'var(--color-bg-light)' }}>
+              {/* TODO: Apply dark mode background via CSS variable or different approach if needed */}
               <div className="p-6 flex-grow">
                 <div className="flex justify-between items-start mb-3">
                     <Link href={project.liveLink || "#"} target={project.liveLink ? "_blank" : "_self"} rel="noopener noreferrer">

@@ -78,7 +78,8 @@ const experienceData = [
 // CompanyIcon component removed due to persistent sizing issues
 const Experience = () => {
   return (
-    <section id="experience" className="py-16 md:py-24 bg-light-DEFAULT dark:bg-dark-DEFAULT">
+    <section id="experience" className="py-16 md:py-24" style={{ backgroundColor: 'var(--color-bg-light)' }}>
+      {/* TODO: Apply dark mode background via CSS variable or different approach if needed */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-light-text dark:text-dark-text">
           Professional <span className="text-brand-accent">Experience</span>
@@ -107,7 +108,8 @@ const Experience = () => {
               <div className="md:w-1/2 flex md:justify-center mb-6 md:mb-0">
                 <div className={`relative md:w-auto ${index % 2 === 0 ? 'md:text-left' : 'md:text-right'}`}>
                     <div className="hidden md:block absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-brand-accent rounded-full ${index % 2 === 0 ? 'left-[-2.3rem]': 'right-[-2.3rem]' }"></div>
-                    <div className="p-2 bg-light-DEFAULT dark:bg-gray-800 rounded-full inline-block shadow-md">
+                    <div className="p-2 dark:bg-gray-800 rounded-full inline-block shadow-md" style={{ backgroundColor: 'var(--color-bg-light)' }}>
+                      {/* TODO: Apply dark mode background via CSS variable or different approach if needed */}
                         {/* SVG removed due to persistent sizing issues */}
                         {/* {exp.logo ? <img src={exp.logo} alt={`${exp.company} logo`} className="w-10 h-10" /> : <CompanyIcon />} */}
                         <div className="w-10 h-10 bg-gray-300 dark:bg-gray-600 rounded-full flex items-center justify-center text-xs text-gray-500 dark:text-gray-400">Logo</div> {/* Placeholder div */}
@@ -117,7 +119,8 @@ const Experience = () => {
 
               {/* Experience Card Content */}
               <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8' }`}>
-                <div className="bg-light-DEFAULT dark:bg-gray-800 p-6 rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-gray-200 dark:border-gray-700">
+                <div className="dark:bg-gray-800 p-6 rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-gray-200 dark:border-gray-700" style={{ backgroundColor: 'var(--color-bg-light)' }}>
+                  {/* TODO: Apply dark mode background via CSS variable or different approach if needed */}
                   <h3 className="text-xl font-bold text-brand-accent mb-1">{exp.role}</h3>
                   <p className="text-md font-semibold text-light-text dark:text-gray-300 mb-1">{exp.company}</p>
                   <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">{exp.dates}</p>

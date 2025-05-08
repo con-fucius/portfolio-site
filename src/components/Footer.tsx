@@ -13,7 +13,8 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="py-8 bg-light-DEFAULT text-light-text dark:bg-dark-DEFAULT dark:text-gray-400">
+    <footer className="py-8 text-light-text dark:text-gray-400" style={{ backgroundColor: 'var(--color-bg-light)' }}>
+      {/* TODO: Apply dark mode background via CSS variable or different approach if needed */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
         <div className="flex space-x-6 mb-4">
           {socials.map((social) => (

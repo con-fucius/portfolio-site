@@ -96,7 +96,8 @@ const BrainDump = async () => {
   const latestArticles = await getBlogPreviews();
 
   return (
-    <section id="braindump" className="py-16 md:py-24 bg-light-DEFAULT dark:bg-dark-DEFAULT">
+    <section id="braindump" className="py-16 md:py-24" style={{ backgroundColor: 'var(--color-bg-light)' }}>
+      {/* TODO: Apply dark mode background via CSS variable or different approach if needed */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-light-text dark:text-dark-text">
           Brain <span className="text-brand-accent">Dump</span>
@@ -110,7 +111,8 @@ const BrainDump = async () => {
             <div className="space-y-6">
               {latestArticles.length > 0 ? (
                 latestArticles.slice(0, 3).map((post) => ( // Displaying up to 3 latest
-                  <div key={post.slug} className="p-4 rounded-md bg-light-DEFAULT dark:bg-gray-800 shadow-md hover:shadow-lg transition-shadow">
+                  <div key={post.slug} className="p-4 rounded-md dark:bg-gray-800 shadow-md hover:shadow-lg transition-shadow" style={{ backgroundColor: 'var(--color-bg-light)' }}>
+                    {/* TODO: Apply dark mode background via CSS variable or different approach if needed */}
                     <Link href={`/blog/${post.slug}`} className="block">
                       <h4 className="text-lg font-bold text-brand-accent hover:underline mb-1">
                         {post.title}
@@ -135,7 +137,8 @@ const BrainDump = async () => {
             </h3>
             <ul className="space-y-4">
               {readingListData.map((item, index) => (
-                <li key={index} className="p-4 rounded-md bg-light-DEFAULT dark:bg-gray-800 shadow-md">
+                <li key={index} className="p-4 rounded-md dark:bg-gray-800 shadow-md" style={{ backgroundColor: 'var(--color-bg-light)' }}>
+                  {/* TODO: Apply dark mode background via CSS variable or different approach if needed */}
                   <Link href={item.link} target="_blank" rel="noopener noreferrer" className="hover:text-brand-accent">
                     <h4 className="font-semibold text-light-text dark:text-dark-text">{item.title}</h4>
                   </Link>

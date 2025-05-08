@@ -3,7 +3,8 @@ import ThemeSwitcher from './ThemeSwitcher';
 
 const Navbar = () => {
   return (
-    <nav className="sticky top-0 z-50 shadow-md bg-light-DEFAULT text-light-text dark:bg-dark-DEFAULT dark:text-dark-text">
+    <nav className="sticky top-0 z-50 shadow-md text-light-text dark:text-dark-text" style={{ backgroundColor: 'var(--color-bg-light)' }}>
+      {/* TODO: Apply dark mode background via CSS variable or different approach if needed */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">

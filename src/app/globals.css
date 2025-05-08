@@ -5,12 +5,25 @@
 /* Optional: Add any global base styles here if needed, 
    but prefer Tailwind classes where possible */
 
+:root {
+  --color-bg-light: #FFFFFF; /* Match light.DEFAULT */
+  --color-text-light: #1A202C; /* Match light.text */
+  --color-bg-dark: #0A192F; /* Match dark.DEFAULT */
+  --color-text-dark: #E2E8F0; /* Match dark.text */
+  --color-brand-accent: #64FFDA; /* Match brand.accent */
+  --color-brand-primary: #0A192F; /* Match brand.primary */
+}
+
 body {
-  @apply bg-light-DEFAULT text-light-text; /* Default is light theme */
+  background-color: var(--color-bg-light);
+  color: var(--color-text-light);
+  /* @apply bg-light-DEFAULT text-light-text; */ /* Replaced with CSS vars */
 }
 
 .dark body {
-  @apply bg-dark-DEFAULT text-dark-text; /* Styles for dark theme */
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-dark);
+  /* @apply bg-dark-DEFAULT text-dark-text; */ /* Replaced with CSS vars */
 }
 
 /* Styling for scrollbar (optional, but can enhance theme consistency) */

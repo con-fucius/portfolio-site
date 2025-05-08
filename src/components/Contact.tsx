@@ -39,7 +39,8 @@ const contactLinks = [
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-16 md:py-24 bg-light-DEFAULT dark:bg-dark-DEFAULT">
+    <section id="contact" className="py-16 md:py-24" style={{ backgroundColor: 'var(--color-bg-light)' }}>
+      {/* TODO: Apply dark mode background via CSS variable or different approach if needed */}
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-light-text dark:text-dark-text">
           Let's <span className="text-brand-accent">Connect</span>
@@ -54,7 +55,8 @@ const Contact = () => {
               href={item.href}
               target={item.href.startsWith('http') ? '_blank' : '_self'}
               rel={item.href.startsWith('http') ? 'noopener noreferrer' : ''}
-              className="group flex items-center justify-center p-4 rounded-lg bg-light-DEFAULT dark:bg-gray-800 shadow-md hover:shadow-lg transition-all duration-300 border border-transparent hover:border-brand-accent"
+              className="group flex items-center justify-center p-4 rounded-lg dark:bg-gray-800 shadow-md hover:shadow-lg transition-all duration-300 border border-transparent hover:border-brand-accent" style={{ backgroundColor: 'var(--color-bg-light)' }}
+              // TODO: Apply dark mode background via CSS variable or different approach if needed
             >
               {/* Icon display removed */}
               {/* <div className="mr-4 text-brand-accent group-hover:scale-110 transition-transform">

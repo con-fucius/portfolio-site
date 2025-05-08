@@ -70,14 +70,16 @@ const skillsData = [
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-16 md:py-24 bg-light-DEFAULT dark:bg-dark-DEFAULT">
+    <section id="skills" className="py-16 md:py-24" style={{ backgroundColor: 'var(--color-bg-light)' }}>
+      {/* TODO: Apply dark mode background via CSS variable or different approach if needed */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-light-text dark:text-dark-text">
           Skills & <span className="text-brand-accent">Competencies</span>
         </h2>
         <div className="skills-grid gap-10"> {/* Applying direct class */}
           {skillsData.map((skillCategory) => (
-            <div key={skillCategory.category} className="bg-light-DEFAULT dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div key={skillCategory.category} className="dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300" style={{ backgroundColor: 'var(--color-bg-light)' }}>
+              {/* TODO: Apply dark mode background via CSS variable or different approach if needed */}
               <h3 className="text-xl font-semibold mb-4 text-brand-accent">
                 {skillCategory.category}
               </h3>

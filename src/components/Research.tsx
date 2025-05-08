@@ -20,7 +20,8 @@ const Research = async () => {
   const markdownContent = await getMarkdownContent(markdownFilePath);
 
   return (
-    <section id="research" className="py-16 md:py-24 bg-light-DEFAULT dark:bg-dark-DEFAULT">
+    <section id="research" className="py-16 md:py-24" style={{ backgroundColor: 'var(--color-bg-light)' }}>
+      {/* TODO: Apply dark mode background via CSS variable or different approach if needed */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-light-text dark:text-dark-text">
           Research <span className="text-brand-accent">Highlights</span>
